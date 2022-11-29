@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem _deathEffect;
+    [SerializeField] private Transform _deathEffect;
     [SerializeField] private float _deathTime;
 
     public event UnityAction<Enemy> Dying;

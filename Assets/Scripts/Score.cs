@@ -7,6 +7,9 @@ public class Score : MonoBehaviour
 {
     [SerializeField] private Player _player;
     [SerializeField] private TMP_Text _scoreDisplay;
+    [SerializeField] private GameObject _winDisplay;
+
+    private int _victoryScore = 5;
 
     private void OnEnable()
     {
@@ -21,6 +24,13 @@ public class Score : MonoBehaviour
 
     private void OnScoreAdded(int score)
     {
-        _scoreDisplay.text = score.ToString();
+        if (_victoryScore <= score)
+        {
+            _scoreDisplay.text = score.ToString();
+            _winDisplay.SetActive(true);
+
+        }
+        else
+            _scoreDisplay.text = score.ToString();
     }
 }
