@@ -5,6 +5,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private float _timeAlive;
+
+    private void Start()
+    {
+        StartCoroutine(BulletDestroy());
+    }
 
     private void Update()
     {
@@ -18,5 +24,12 @@ public class Bullet : MonoBehaviour
             enemy.Die();
             Destroy(gameObject);
         }
+    }
+
+    private IEnumerator BulletDestroy()
+    {
+        yield return new WaitForSeconds(_timeAlive);
+        Destroy(gameObject);
+
     }
 }

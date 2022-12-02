@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private Transform _deathEffect;
+    [SerializeField] private GameObject _enemyParent;
     [SerializeField] private float _deathTime;
 
     public event UnityAction<Enemy> Dying;
@@ -14,7 +15,7 @@ public class Enemy : MonoBehaviour
     {
         Dying?.Invoke(this);
         Instantiate(_deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        Destroy(_enemyParent);
     }
 
 }

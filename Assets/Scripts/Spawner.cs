@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float _spawnRadius;
     [SerializeField] private float _secondBetweenSpawn;
     [SerializeField] private int _maxEnemy;
-    [SerializeField] private Enemy[] _enemies;
+    [SerializeField] private Transform[] _enemies;
 
     private int _enemyCount = 0;
     private void Start()
@@ -37,11 +37,11 @@ public class Spawner : MonoBehaviour
             if (_maxEnemy > _enemyCount)
             {
 
-                Enemy newEnemy = Instantiate(_enemies[Random.Range(0, _enemies.Length)], GetRandomPlaceInSphere(_spawnRadius), Quaternion.identity);
+                Transform newEnemy = Instantiate(_enemies[Random.Range(0, _enemies.Length)], GetRandomPlaceInSphere(_spawnRadius), Quaternion.identity);
 
-                Vector3 lookDirection = _targer.transform.position - newEnemy.transform.position;
-                newEnemy.transform.rotation = Quaternion.LookRotation(lookDirection);
-                newEnemy.Dying += OnEnemyDied;
+
+                Enemy enemy = newEnemy.GetComponentInChildren<Enemy>();
+                enemy.Dying += OnEnemyDied;
 
                 _enemyCount++;
             }
