@@ -12,11 +12,12 @@ public class EnemyRotator : MonoBehaviour
     {
         if (_isLookingAtTarget)
             transform.LookAt(_targetPoint);
-
-        if (Vector3.Distance(transform.position, _targetPoint.position) > 0.5f)
-        {
-            transform.position = Vector3.Lerp(transform.position, _targetPoint.position, Time.deltaTime * _speed);
-        }
+        /*
+                if (Vector3.Distance(transform.position, _targetPoint.position) > 0.5f)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, _targetPoint.position, Time.deltaTime * _speed);
+                }*/
+        transform.position = _targetPoint.position;
         // transform.position = _targetPoint.position * Time.deltaTime;
     }
 }

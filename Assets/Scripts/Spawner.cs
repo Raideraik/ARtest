@@ -14,7 +14,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnRandomEnemy());
-        Application.targetFrameRate = 120;
+        // Application.targetFrameRate = 120;
 
     }
 

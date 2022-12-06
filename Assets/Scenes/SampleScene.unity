@@ -815,6 +815,7 @@ MonoBehaviour:
   _enemies:
   - {fileID: 6539884640453111764, guid: 33b5392769dc2f245a7bd7c4b157053d, type: 3}
   - {fileID: 6552585134705196704, guid: a5669bf9fbb54804f9bf410c7d8d3aa0, type: 3}
+  - {fileID: 6539884640453111764, guid: 13c5b8fe37cc77d439fbdb37feb94792, type: 3}
 --- !u!4 &1559950206
 Transform:
   m_ObjectHideFlags: 0
