@@ -15,7 +15,6 @@ public class Spawner : MonoBehaviour
     {
         StartCoroutine(SpawnRandomEnemy());
         // Application.targetFrameRate = 120;
-
     }
 
     private Vector3 GetRandomPlaceInSphere(float radius)
