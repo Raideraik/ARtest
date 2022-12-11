@@ -6,14 +6,17 @@ public class Shooter : MonoBehaviour
 {
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private Bullet _bulletPrefab;
-    [SerializeField] protected Animator _animator;
-
+    [SerializeField] private Animator _animator;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip[] _audioShoots;
     private void Update()
     {
         if (Input.touchCount > 0)
         {
+            _audioSource.clip = _audioShoots[Random.Range(0, _audioShoots.Length)];
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
+                _audioSource.Play();
                 _animator.SetTrigger("Fire");
                 Instantiate(_bulletPrefab, _shootPoint);
             }
