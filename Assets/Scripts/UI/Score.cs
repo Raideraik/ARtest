@@ -12,7 +12,7 @@ public class Score : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private Slider _scoreSlider;
 
-    private int _victoryScore = 5;
+    [SerializeField] private int _victoryScore = 5;
 
     private void Start()
     {

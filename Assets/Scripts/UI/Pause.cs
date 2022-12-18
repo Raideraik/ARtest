@@ -39,6 +39,7 @@ public class Pause : MonoBehaviour
 
     private void Exit()
     {
+        Time.timeScale = 1;
         SceneManager.LoadSceneAsync(0);
     }
 }

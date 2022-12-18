@@ -13,19 +13,23 @@ public class Shooter : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            _audioSource.clip = _audioShoots[Random.Range(0, _audioShoots.Length)];
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
+                _audioSource.clip = _audioShoots[Random.Range(0, _audioShoots.Length)];
                 _audioSource.Play();
                 _animator.SetTrigger("Fire");
                 Instantiate(_bulletPrefab, _shootPoint);
             }
         }
-        //else if (Input.GetMouseButtonDown(0))
-        //{
-        //  _animator.SetTrigger("Fire");
+        else if (Input.GetMouseButtonDown(0))
+        {
+            _audioSource.clip = _audioShoots[Random.Range(0, _audioShoots.Length)];
 
-        //            Instantiate(_bulletPrefab, _shootPoint);
-        //      }
+            _audioSource.Play();
+
+            _animator.SetTrigger("Fire");
+
+            Instantiate(_bulletPrefab, _shootPoint);
+        }
     }
 }
