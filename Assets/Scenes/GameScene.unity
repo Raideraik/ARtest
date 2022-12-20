@@ -1670,7 +1670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 580698716}
   _scoreSlider: {fileID: 25817025}
-  _victoryScore: 10
+  _victoryScore: 20
 --- !u!114 &1118963949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1685,8 +1685,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _victoryScreen: {fileID: 1651012378}
   _score: {fileID: 1118963948}
+  _video: {fileID: 1721951468}
   _audioSource: {fileID: 1736856875}
-  _clip: {fileID: 8300000, guid: 59df8a19e1533ec4cb174d07d5fadb64, type: 3}
+  _victoryClip: {fileID: 8300000, guid: ce43e68fd63de4141980b69330680af8, type: 3}
+  _gameClip: {fileID: 8300000, guid: 0f517d6846722884d8409a9e8ea84d9e, type: 3}
   _exitButton: {fileID: 1657131368}
 --- !u!114 &1118963950
 MonoBehaviour:

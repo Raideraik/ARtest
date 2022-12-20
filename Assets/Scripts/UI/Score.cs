@@ -31,7 +31,7 @@ public class Score : MonoBehaviour
 
     private void OnScoreAdded(int score)
     {
-        if (_victoryScore <= score)
+        if (_victoryScore == score)
         {
             _scoreSlider.value = score;
             OnVictoryScoreAchieved?.Invoke(this, EventArgs.Empty);
