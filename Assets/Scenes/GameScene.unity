@@ -1670,7 +1670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 580698716}
   _scoreSlider: {fileID: 25817025}
-  _victoryScore: 20
+  _victoryScore: 1
 --- !u!114 &1118963949
 MonoBehaviour:
   m_ObjectHideFlags: 0
